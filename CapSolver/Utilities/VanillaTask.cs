@@ -9,7 +9,7 @@ public class VanillaTask
     /// </summary>
     [JsonRequired]
     [JsonProperty("clientKey", NullValueHandling = NullValueHandling.Ignore)]
-    public string ClientKey { get; set; } = null!;
+    public string ClientKey { get; set; }
 
     [JsonProperty("task", NullValueHandling = NullValueHandling.Ignore)]
     public ITask? Task { get; private set; }

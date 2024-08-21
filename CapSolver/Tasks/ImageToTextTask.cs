@@ -12,16 +12,24 @@ public class ImageToTextTask : ITask
     /// Task's type.
     /// </summary>
     [JsonProperty("type")]
-    private readonly string Type = "ImageToTextTask";
+    private string Type => "ImageToTextTask";
 
     /// <summary>
-    /// Base64 encoded content of the image (without line breaks)
+    /// Page source url to improve accuracy
+    /// </summary>
+    [JsonProperty("websiteURL")]
+    public string? WebsiteUrl { get; set; }
+
+    /// <summary>
+    /// Base64 encoded content of the image (no newlines, no data:image/***;charset=utf-8;base64,)
     /// </summary>
     [JsonProperty("body")]
     public string Body { get; set; }
 
     /// <summary>
-    /// Specifies the module. Currently, the supported modules are common and queueit.
+    /// Specifies the module.
+    /// <br />
+    /// See independent module support list: <seealso href="https://docs.capsolver.com/guide/recognition/ImageToTextTask.html#independent-module-support">click here</seealso>
     /// </summary>
     [JsonProperty("module")]
     public string? Module { get; set; }

@@ -6,10 +6,10 @@ namespace CapSolver.Tasks;
 /// <summary>
 /// This task type is used to solve HCaptcha.
 /// </summary>
-public class HCaptchaTask : ITask, IProxyTask, IUserAgentTask
+public class HCaptchaTask : ITask, IUserAgentTask
 {
     [JsonProperty("type")]
-    protected string Type = "HCaptchaTask";
+    protected string Type = "HCaptchaTaskProxyLess";
 
     /// <summary>
     /// Address of a webpage with hCaptcha
@@ -49,13 +49,11 @@ public class HCaptchaTask : ITask, IProxyTask, IUserAgentTask
     /// <param name="websiteUrl">Address of a webpage with hCaptcha</param>
     /// <param name="websiteKey">hCaptcha website key</param>
     /// <param name="enterprisePayload">Custom data that is used in some implementations of hCaptcha Enterprise. So you need to put true in the isEnterprise parameter. In most cases you see it as rqdata inside network requests. IMPORTANT: you MUST provide userAgent if you submit captcha with data parameter. The value should match the User-Agent you use when interacting with the target website.</param>
-    /// <param name="isEnterprise">Use true for enterprise version of hcaptcha</param>
     /// <param name="isInvisible">Use true for invisible version of hcaptcha</param>
     /// <param name="userAgent">Browser's User-Agent which is used in emulation.</param>
     public HCaptchaTask(string websiteUrl,
                         string websiteKey,
                         object? enterprisePayload = null,
-                        bool? isEnterprise = null,
                         bool? isInvisible = null,
                         string? userAgent = null)
     {
@@ -64,9 +62,5 @@ public class HCaptchaTask : ITask, IProxyTask, IUserAgentTask
         EnterprisePayload = enterprisePayload;
         IsInvisible = isInvisible;
         UserAgent = userAgent;
-        if (isEnterprise == true)
-        {
-            Type = "HCaptchaEnterpriseTask";
-        }
     }
 }

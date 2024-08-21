@@ -3,7 +3,7 @@ namespace CapSolver.Tests;
 public class BaseMethodTests
 {
     [Fact]
-    public async void TestBalance()
+    public async Task TestBalance()
     {
         var client = new CapSolverClient(Environment.GetEnvironmentVariable("APIKEY")!, false);
         float balance = await client.GetBalance();
@@ -12,7 +12,7 @@ public class BaseMethodTests
     }
 
     [Fact]
-    public async void TestPackages()
+    public async Task TestPackages()
     {
         var client = new CapSolverClient(Environment.GetEnvironmentVariable("APIKEY")!, false);
         List<string?> packages = await client.GetPackages();

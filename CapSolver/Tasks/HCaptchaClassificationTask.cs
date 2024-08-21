@@ -9,10 +9,23 @@ namespace CapSolver.Tasks;
 public class HCaptchaClassificationTask : ITask
 {
     [JsonProperty("type")]
-    private readonly string Type = "HCaptchaClassification";
+    private string Type => "HCaptchaClassification";
 
     /// <summary>
-    /// Base64-encoded images, do not include "data:image/***;base64,"
+    /// Page source url to improve accuracy
+    /// </summary>
+    [JsonProperty("websiteURL")]
+    public string? WebsiteUrl { get; set; }
+
+    /// <summary>
+    /// Website key to improve accuracy
+    /// </summary>
+    [JsonProperty("websiteKey")]
+    public string? WebsiteKey { get; set; }
+
+    /// <summary>
+    /// Base64 encoded images, do not include "data:image/***; base64,"
+    /// Assembles the picture as a list: [base64, base64, base64...]
     /// </summary>
     [JsonRequired]
     [JsonProperty("queries")]
@@ -21,27 +34,22 @@ public class HCaptchaClassificationTask : ITask
     /// <summary>
     /// Question ID. Support English and Chinese, other languages please convert yourself
     /// </summary>
-    [JsonProperty("question", NullValueHandling = NullValueHandling.Ignore)]
-    public string? Question { get; set; }
-
-    /// <summary>
-    /// The default result is false. If you need to return coordinates such as [0, 3, 4, 6, 7], put as true.
-    /// </summary>
-    [JsonProperty("coordinate", NullValueHandling = NullValueHandling.Ignore)]
-    public bool? Coordinate { get; set; }
+    [JsonRequired]
+    [JsonProperty("question")]
+    public string Question { get; set; }
 
     /// <summary>
     /// Prepare a HCaptchaClassification task.
     /// </summary>
-    /// <param name="queries">Base64-encoded images, do not include "data:image/***;base64,"Base64-encoded images, do not include "data:image/***;base64,"</param>
-    /// <param name="question">Question ID. Support English and Chinese, other languages please convert yourself</param>
-    /// <param name="coordinate">The default result is false. If you need to return coordinates such as [0, 3, 4, 6, 7], put as true.</param>
+    /// <param name="queries">Base64 encoded images, do not include "data:image/***; base64,"</param>
+    /// <param name="question">Question ID. English is supported only. Please convert other languages by yourself</param>
+    /// <param name="websiteUrl">Page source url to improve accuracy</param>
     public HCaptchaClassificationTask(IList<string> queries,
-                                      string? question = null,
-                                      bool? coordinate = null)
+                                      string question,
+                                      string? websiteUrl = null)
     {
         Queries = queries;
         Question = question;
-        Coordinate = coordinate;
+        WebsiteUrl = websiteUrl;
     }
 }

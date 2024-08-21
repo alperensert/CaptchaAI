@@ -6,37 +6,35 @@
 ### Installation
 via Package Manager:
 ```
-NuGet\Install-Package CapSolver -Version 1.2.1
+NuGet\Install-Package CapSolver -Version 2.0.0
 ```
 This command is intended to be used within the Package Manager Console in Visual Studio, as it uses the NuGet module's version of Install-Package.
 
 via .NET CLI:
 ```ssh
-dotnet add package CapSolver --version 1.2.1
+dotnet add package CapSolver --version 2.0.0
 ```
 
 via adding PackageReference:
 ```xml
-<PackageReference Include="CapSolver" Version="1.2.1" />
+<PackageReference Include="CapSolver" Version="2.0.0" />
 ```
 For projects that support PackageReference, copy this XML node into the project file to reference the package.
 
 ### Supported Captcha Types
-- Image to text
+- Image To Text
 - ReCaptcha V2
+- ReCaptcha V2 Classification
 - ReCaptcha V3
 - HCaptcha
 - HCaptcha Classification
-- FunCaptcha
-- FunCaptcha Classification
-- GeeTest
-- Datadome Slider
-- Anti Cloud Flare
-- Mt Captcha
-- Binance Captcha
+- GeeTest V3 / V4
+- Datadome Slider / Interstitial
+- Anti Turnstile / Cloudflare
+- MTCaptcha
+- AWS WAF Captcha
 - AWS WAF Classification
-- Anti Kasada
-- Anti Akamai BMP
+- Vision Engine Classification
 
 ### Usage Examples
 ---
@@ -65,9 +63,9 @@ var response = await client.JoinTaskResult<ReCaptchaV2Response>(id);
 #### FunCaptcha Task
 ```csharp
 var client = new CapSolverClient("apikey", false);
-var task = new FunCaptchaTask("funcaptcha-site", "funcaptcha-key", "funcaptcha-js-source");
+var task = new HCaptchaTask("hcaptcha-site", "hcaptcha-key");
 string id = await client.CreateTask(task);
-var response = await client.JoinTaskResult<FunCaptchaTaskResponse>(id);
+var response = await client.JoinTaskResult<HCaptchaResponse>(id);
 ```
 
 For other examples and api documentation please visit [wiki](https://captchaai.atlassian.net/wiki/spaces/CAPTCHAAI/overview)

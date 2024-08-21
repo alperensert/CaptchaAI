@@ -3,10 +3,10 @@ using Newtonsoft.Json;
 
 namespace CapSolver.Tasks;
 
-public class AntiCloudflareTask : ITask, IProxyTask
+public class AntiTurnstileTask : ITask
 {
     [JsonProperty("type")]
-    private readonly string Type = "AntiCloudflareTask";
+    private string Type => "AntiTurnstileTaskProxyLess";
 
     /// <summary>
     /// The address of the target page.
@@ -27,14 +27,14 @@ public class AntiCloudflareTask : ITask, IProxyTask
     public Dictionary<string, string>? MetaData { get; set; }
 
     /// <summary>
-    /// Prepare an AntiCloudflare task.
+    /// Prepare an AntiTurnstileProxyLess task.
     /// </summary>
     /// <param name="websiteUrl">The address of the target page.</param>
     /// <param name="websiteKey">Turnstile siteKey</param>
     /// <param name="metaData">Turnstile extra data</param>
-    public AntiCloudflareTask(string websiteUrl,
-                              string websiteKey,
-                              Dictionary<string, string>? metaData = null)
+    public AntiTurnstileTask(string websiteUrl,
+                             string websiteKey,
+                             Dictionary<string, string>? metaData = null)
     {
         WebsiteKey = websiteKey;
         WebsiteURL = websiteUrl;

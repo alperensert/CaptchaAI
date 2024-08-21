@@ -10,7 +10,7 @@ namespace CapSolver.Tasks;
 public class DatadomeSliderTask : ITask, IProxyTask
 {
     [JsonProperty("type")]
-    private readonly string Type = "DatadomeSliderTask";
+    private string Type => "DatadomeSliderTask";
 
     /// <summary>
     /// Address of the webpage
@@ -19,7 +19,7 @@ public class DatadomeSliderTask : ITask, IProxyTask
     public string WebsiteURL { get; set; }
 
     /// <summary>
-    /// Captcha Url where is the captcha
+    /// If the url contains t=bv that means that your ip must be banned, t should be t=fe
     /// </summary>
     [JsonProperty("captchaUrl")]
     public string CaptchaURL { get; set; }

@@ -6,6 +6,10 @@ namespace CapSolver.Models.Responses;
 public class AwsWafClassificationResponse : ITaskResponse
 {
     [JsonRequired]
+    [JsonProperty("objects")]
+    public IList<int> Objects { get; set; } = null!;
+
+    [JsonRequired]
     [JsonProperty("box")]
     public IList<float> Box { get; set; } = null!;
 

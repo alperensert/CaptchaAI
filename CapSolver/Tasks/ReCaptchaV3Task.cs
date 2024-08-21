@@ -9,7 +9,7 @@ namespace CapSolver.Tasks;
 public class ReCaptchaV3Task : ITask, IProxyTask, IUserAgentTask, ICookieTask
 {
     [JsonProperty("type")]
-    private readonly string Type = "ReCaptchaV3Task";
+    private string Type { get; set; } = "ReCaptchaV3Task";
 
     /// <summary>
     /// Address of a webpage with Google ReCaptcha 
@@ -30,7 +30,7 @@ public class ReCaptchaV3Task : ITask, IProxyTask, IUserAgentTask, ICookieTask
     /// </summary>
     [JsonRequired]
     [JsonProperty("pageAction")]
-    public string PageAction { get; set; } = "verify";
+    public string PageAction { get; set; }
 
     /// <summary>
     /// Value from 0.1 to 0.9
@@ -73,7 +73,7 @@ public class ReCaptchaV3Task : ITask, IProxyTask, IUserAgentTask, ICookieTask
     /// <param name="userAgent">Browser's User-Agent which is used in emulation.</param>
     public ReCaptchaV3Task(string websiteUrl,
                            string websiteKey,
-                           string pageAction,
+                           string pageAction = "verify",
                            double? minimumScore = null,
                            string? cookies = null,
                            string? userAgent = null,
@@ -88,6 +88,7 @@ public class ReCaptchaV3Task : ITask, IProxyTask, IUserAgentTask, ICookieTask
         EnterprisePayload = enterprisePayload;
         ApiDomain = apiDomain;
         Cookies = cookies;
+
         if (enterprisePayload != null)
         {
             Type = "ReCaptchaV3EnterpriseTask";
