@@ -102,15 +102,11 @@ public class CapSolverClient
                 break;
             }
         }
-        var method = task switch
-        {
-            AntiAkamaiBMPTask => Endpoints.CreateTaskAntiAkamai,
-            AntiKasadaTask => Endpoints.CreateTaskKasada,
-            _ => Endpoints.CreateTask
-        };
-        if (task is HCaptchaTurboTask && IsProxyActive() == false)
-            throw new CapSolverException(13, "PROXY_NEEDED", "HCaptchaTurboTask requires your own proxies.");
-        var r = await CheckResponse<CreateTaskResponse>(await MakeRequest(method, data));
+
+        if (task is DatadomeSliderTask && !IsProxyActive())
+            throw new CapSolverException(13, "PROXY_NEEDED", "DatadomeSliderTask requires your own proxies.");
+
+        var r = await CheckResponse<CreateTaskResponse>(await MakeRequest(Endpoints.CreateTask, data));
         return r.TaskId;
     }
 
@@ -120,7 +116,7 @@ public class CapSolverClient
 
     public void DisableProxy() => _proxy = null;
 
-    private bool IsReady<T>(TaskResponse<T> response) where T : ITaskResponse => response.Status == "ready";
+    private static bool IsReady<T>(TaskResponse<T> response) where T : ITaskResponse => response.Status == "ready";
 
     private async Task<HttpResponseMessage> MakeRequest(string endpoint, string data)
     {
@@ -139,7 +135,7 @@ public class CapSolverClient
         return response;
     }
 
-    private void CheckResponse(ErrorResponse? response)
+    private static void CheckResponse(ErrorResponse? response)
     {
         if (response == null)
         {
@@ -151,7 +147,7 @@ public class CapSolverClient
         }
     }
 
-    private async Task<T> CheckResponse<T>(HttpResponseMessage response) where T : ErrorResponse
+    private static async Task<T> CheckResponse<T>(HttpResponseMessage response) where T : ErrorResponse
     {
         try
         {

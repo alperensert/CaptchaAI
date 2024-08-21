@@ -20,10 +20,10 @@ public class Proxy : IProxyTask
     public string? ProxyPassword { get; set; }
 
     public Proxy(string proxyType,
-                     string proxyAddress,
-                     int proxyPort,
-                     string? proxyLogin = null,
-                     string? proxyPassword = null)
+                 string proxyAddress,
+                 int proxyPort,
+                 string? proxyLogin = null,
+                 string? proxyPassword = null)
     {
         ProxyType = proxyType;
         ProxyAddress = proxyAddress;

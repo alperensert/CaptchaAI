@@ -12,6 +12,9 @@ public class HCaptchaClassificationResponse : ITaskResponse
     [JsonProperty("box")]
     public IList<float>? Box { get; set; }
 
+    [JsonProperty("tags")]
+    public IList<bool>? Tags { get; set; }
+
     [JsonProperty("imageSize")]
     public Tuple<int, int>? ImageSize { get; set; }
 }

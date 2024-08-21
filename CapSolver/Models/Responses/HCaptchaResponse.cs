@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace CapSolver.Models.Responses;
 
-public class HCaptchaTaskResponse : ReCaptchaV2Response, ITaskResponse
+public class HCaptchaResponse : ReCaptchaV2Response, ITaskResponse
 {
     [JsonRequired]
     [JsonProperty("timestamp")]

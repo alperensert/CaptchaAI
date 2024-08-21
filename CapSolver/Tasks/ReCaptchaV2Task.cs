@@ -16,14 +16,14 @@ public class ReCaptchaV2Task : ITask, IUserAgentTask, ICookieTask, IProxyTask
     /// </summary>
     [JsonRequired]
     [JsonProperty("websiteURL")]
-    public string WebsiteUrl { get; set; } = null!;
+    public string WebsiteUrl { get; set; }
 
     /// <summary>
     /// Recaptcha website key. <div class="g-recaptcha" data-sitekey="THAT_ONE"></div>
     /// </summary>
     [JsonRequired]
     [JsonProperty("websiteKey")]
-    public string WebsiteKey { get; set; } = null!;
+    public string WebsiteKey { get; set; }
 
     /// <summary>
     /// Specify whether or not Recaptcha is invisible.

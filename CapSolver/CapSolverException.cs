@@ -1,7 +1,7 @@
-namespace CapSolver.Utilities;
+namespace CapSolver;
 
-[System.Serializable]
-public class CapSolverException : System.Exception
+[Serializable]
+public class CapSolverException : Exception
 {
     public int ErrorId { get; set; }
 

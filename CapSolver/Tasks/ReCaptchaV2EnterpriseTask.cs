@@ -6,7 +6,7 @@ namespace CapSolver.Tasks;
 /// <summary>
 /// This task type is used to solve the ReCaptchaV2 Enterprise version.
 /// </summary>
-public class ReCaptchaV2Enterprise : ITask, IProxyTask, IUserAgentTask, ICookieTask
+public class ReCaptchaV2EnterpriseTask : ITask, IProxyTask, IUserAgentTask, ICookieTask
 {
     /// <summary>
     /// Task's type.
@@ -65,7 +65,7 @@ public class ReCaptchaV2Enterprise : ITask, IProxyTask, IUserAgentTask, ICookieT
     /// <param name="apiDomain">Domain address from which to load reCAPTCHA Enterprise. </param>
     /// <param name="cookies">Additional cookies which we must use during interaction with target page or Google.</param>
     /// <param name="userAgent">Browser's User-Agent which is used in emulation.</param>
-    public ReCaptchaV2Enterprise(string websiteUrl,
+    public ReCaptchaV2EnterpriseTask(string websiteUrl,
                                  string websiteKey,
                                  object? enterprisePayload = null,
                                  string? apiDomain = null,
