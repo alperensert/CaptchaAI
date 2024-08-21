@@ -50,5 +50,6 @@ public class HCaptchaClassificationTask : ITask
     {
         Queries = queries;
         Question = question;
+        WebsiteUrl = websiteUrl;
     }
 }

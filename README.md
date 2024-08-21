@@ -28,10 +28,11 @@ For projects that support PackageReference, copy this XML node into the project 
 - ReCaptcha V3
 - HCaptcha
 - HCaptcha Classification
-- GeeTest
+- GeeTest V3 / V4
 - Datadome Slider / Interstitial
 - Anti Turnstile / Cloudflare
 - MTCaptcha
+- AWS WAF Captcha
 - AWS WAF Classification
 - Vision Engine Classification
 

@@ -43,5 +43,6 @@ public class AwsWafClassificationTask : ITask
     {
         Images = images;
         Question = question;
+        WebsiteUrl = websiteUrl;
     }
 }

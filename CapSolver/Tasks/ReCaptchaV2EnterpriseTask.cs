@@ -70,7 +70,7 @@ public class ReCaptchaV2EnterpriseTask : ITask, IProxyTask, IUserAgentTask, ICoo
                                  object? enterprisePayload = null,
                                  string? apiDomain = null,
                                  string? userAgent = null,
-                                 string? cookies= null)
+                                 string? cookies = null)
     {
         WebsiteUrl = websiteUrl;
         WebsiteKey = websiteKey;

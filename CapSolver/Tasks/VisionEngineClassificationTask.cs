@@ -61,5 +61,7 @@ public class VisionEngineClassificationTask : ITask
         Module = module;
         Image = image;
         ImageBackground = imageBackground;
+        WebsiteUrl = websiteUrl;
+        Question = question;
     }
 }
