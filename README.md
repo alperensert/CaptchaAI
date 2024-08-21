@@ -6,18 +6,18 @@
 ### Installation
 via Package Manager:
 ```
-NuGet\Install-Package CapSolver -Version 1.2.1
+NuGet\Install-Package CapSolver -Version 1.3.0
 ```
 This command is intended to be used within the Package Manager Console in Visual Studio, as it uses the NuGet module's version of Install-Package.
 
 via .NET CLI:
 ```ssh
-dotnet add package CapSolver --version 1.2.1
+dotnet add package CapSolver --version 1.3.0
 ```
 
 via adding PackageReference:
 ```xml
-<PackageReference Include="CapSolver" Version="1.2.1" />
+<PackageReference Include="CapSolver" Version="1.3.0" />
 ```
 For projects that support PackageReference, copy this XML node into the project file to reference the package.
 
