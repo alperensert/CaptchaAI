@@ -6,7 +6,7 @@ namespace CapSolver.Models.Responses;
 public class DatadomeSliderResponse : ITaskResponse
 {
     [JsonProperty("cookie")]
-    public string Cookie { get; set; }
+    public string? Cookie { get; set; }
 
     [JsonRequired]
     [JsonProperty("userAgent")]

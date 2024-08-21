@@ -6,7 +6,7 @@ namespace CapSolver.Tasks;
 public class BinanceCaptchaTask : ITask, IProxyTask
 {
     [JsonProperty("type")]
-    private readonly string Type = "BinanceCaptchaTask";
+    private string Type => "BinanceCaptchaTask";
 
     /// <summary>
     /// Address of a webpage with bncaptcha

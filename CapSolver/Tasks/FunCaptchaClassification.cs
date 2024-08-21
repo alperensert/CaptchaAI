@@ -9,7 +9,7 @@ namespace CapSolver.Tasks;
 public class FunCaptchaClassification : ITask
 {
     [JsonProperty("type")]
-    private readonly string Type = "FunCaptchaClassification";
+    private string Type => "FunCaptchaClassification";
 
     /// <summary>
     /// Base64 encoded image, can be a screenshot (pass only the hexagonal image, do not pass the rest of the content)

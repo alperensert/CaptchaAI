@@ -13,5 +13,5 @@ public class HCaptchaClassificationResponse : ITaskResponse
     public IList<float>? Box { get; set; }
 
     [JsonProperty("imageSize")]
-    public Tuple<int, int> ImageSize { get; set; }
+    public Tuple<int, int>? ImageSize { get; set; }
 }

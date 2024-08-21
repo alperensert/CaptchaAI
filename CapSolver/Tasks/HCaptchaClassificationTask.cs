@@ -9,7 +9,7 @@ namespace CapSolver.Tasks;
 public class HCaptchaClassificationTask : ITask
 {
     [JsonProperty("type")]
-    private readonly string Type = "HCaptchaClassification";
+    private string Type => "HCaptchaClassification";
 
     /// <summary>
     /// Base64-encoded images, do not include "data:image/***;base64,"

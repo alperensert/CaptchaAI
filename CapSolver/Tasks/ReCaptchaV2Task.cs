@@ -9,7 +9,7 @@ namespace CapSolver.Tasks;
 public class ReCaptchaV2Task : ITask, IUserAgentTask, ICookieTask, IProxyTask
 {
     [JsonProperty("type")]
-    private readonly string Type = "ReCaptchaV2Task";
+    private string Type => "ReCaptchaV2Task";
 
     /// <summary>
     /// Address of a webpage with Google ReCaptcha

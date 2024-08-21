@@ -10,7 +10,7 @@ namespace CapSolver.Tasks;
 public class DatadomeSliderTask : ITask, IProxyTask
 {
     [JsonProperty("type")]
-    private readonly string Type = "DatadomeSliderTask";
+    private string Type => "DatadomeSliderTask";
 
     /// <summary>
     /// Address of the webpage

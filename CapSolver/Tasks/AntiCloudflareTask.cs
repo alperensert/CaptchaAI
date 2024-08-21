@@ -6,7 +6,7 @@ namespace CapSolver.Tasks;
 public class AntiCloudflareTask : ITask, IProxyTask
 {
     [JsonProperty("type")]
-    private readonly string Type = "AntiCloudflareTask";
+    private string Type => "AntiCloudflareTask";
 
     /// <summary>
     /// The address of the target page.

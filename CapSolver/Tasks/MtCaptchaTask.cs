@@ -6,7 +6,7 @@ namespace CapSolver.Tasks;
 public class MtCaptchaTask : ITask, IProxyTask, IUserAgentTask
 {
     [JsonProperty("type")]
-    private readonly string Type = "MtCaptchaTask";
+    private string Type => "MtCaptchaTask";
 
     /// <summary>
     /// Web address of the website using hcaptcha, generally it's fixed value. (Ex: https://google.com)

@@ -4,7 +4,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>CapSolver</PackageId> 
-    <Version>1.2.1</Version> 
+    <Version>1.3.0</Version> 
     <Authors>Alperen Sert</Authors> 
     <Company>Alperen Sert</Company> 
     <PackageTags>CapSolver,ReCaptcha v2 solver, Bypass captcha, anti-captcha,</PackageTags> 
@@ -16,7 +16,7 @@
     <RespositoryType>git</RespositoryType>
 </PropertyGroup>
 <ItemGroup>
-  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   <None Include="../README.md" Pack="true" PackagePath="\" />
 </ItemGroup>
 </Project>

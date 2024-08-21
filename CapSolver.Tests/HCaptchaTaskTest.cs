@@ -3,7 +3,7 @@ namespace CapSolver.Tests;
 public class HCaptchaTaskTest
 {
     [Fact]
-    public async void Test()
+    public async Task Test()
     {
         var client = new CapSolverClient(Environment.GetEnvironmentVariable("APIKEY")!, false);
         var task = new HCaptchaTask("https://lessons.zennolab.com/captchas/hcaptcha/?level=easy",

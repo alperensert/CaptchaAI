@@ -12,7 +12,7 @@ public class ReCaptchaV2Enterprise : ITask, IProxyTask, IUserAgentTask, ICookieT
     /// Task's type.
     /// </summary>
     [JsonProperty("type")]
-    private readonly string Type = "ReCaptchaV2EnterpriseTask";
+    private string Type => "ReCaptchaV2EnterpriseTask";
 
     /// <summary>
     /// Address of a webpage with Google ReCaptcha

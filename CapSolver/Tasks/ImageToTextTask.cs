@@ -12,7 +12,7 @@ public class ImageToTextTask : ITask
     /// Task's type.
     /// </summary>
     [JsonProperty("type")]
-    private readonly string Type = "ImageToTextTask";
+    private string Type => "ImageToTextTask";
 
     /// <summary>
     /// Base64 encoded content of the image (without line breaks)

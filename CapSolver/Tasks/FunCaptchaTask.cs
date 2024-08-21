@@ -9,7 +9,7 @@ namespace CapSolver.Tasks;
 public class FunCaptchaTask : ITask, IProxyTask, IUserAgentTask
 {
     [JsonProperty("type")]
-    private readonly string Type = "FunCaptchaTask";
+    private string Type => "FunCaptchaTask";
 
     /// <summary>
     /// Address of a webpage with Funcaptcha

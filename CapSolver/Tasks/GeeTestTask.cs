@@ -9,7 +9,7 @@ namespace CapSolver.Tasks;
 public class GeeTestTask : ITask, IProxyTask, IUserAgentTask, ICookieTask
 {
     [JsonProperty("type")]
-    private readonly string Type = "GeeTestTask";
+    private string Type => "GeeTestTask";
 
     /// <summary>
     /// Address of a webpage with Geetest

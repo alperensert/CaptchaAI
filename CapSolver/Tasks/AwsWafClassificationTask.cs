@@ -6,7 +6,7 @@ namespace CapSolver.Tasks;
 public class AwsWafClassificationTask : ITask
 {
     [JsonProperty("type")]
-    private readonly string Type = "AwsWafClassification";
+    private string Type => "AwsWafClassification";
 
     /// <summary>
     /// Base64-encoded images, do not include "data:image/***;base64,"

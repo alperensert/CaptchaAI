@@ -3,7 +3,7 @@ namespace CapSolver.Tests;
 public class ReCaptchaV3TaskTest
 {
     [Fact]
-    public async void Test()
+    public async Task Test()
     {
         var client = new CapSolverClient(Environment.GetEnvironmentVariable("APIKEY")!, false);
         var task = new ReCaptchaV3Task("https://lessons.zennolab.com/captchas/recaptcha/v3.php?level=beta",

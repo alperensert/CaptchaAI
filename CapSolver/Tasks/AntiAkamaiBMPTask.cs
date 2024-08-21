@@ -12,7 +12,7 @@ public class AntiAkamaiBMPTask : ITask
     /// Task's type.
     /// </summary>
     [JsonProperty("type")]
-    private readonly string Type = "AntiAkamaiBMPTask";
+    private string Type => "AntiAkamaiBMPTask";
 
     /// <summary>
     /// Package name of AkamaiBMP mobile APP
